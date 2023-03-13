@@ -1,0 +1,2 @@
+khl.py
+revChatGPT>=3.0.0

@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  kook-bot:
+    build:
+      context: ./
+    image: lrx0014/kook-chatbot:latest
+    restart: always
+    container_name: kook-bot
+    volumes:
+      - config.json:/app/config.json
+    ports:
+      - 5000:5000

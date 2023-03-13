@@ -25,7 +25,7 @@ gptApi = Chatbot(**ChatGPTConfig)
 bot = Bot(token=config['kook_token'], port=config['port'])
 
 
-@bot.command(regex='hi Dalek')
+@bot.command(name='hi')
 async def hello(msg: Message):
     await msg.reply("what's up bro!", use_quote=True)
 
@@ -36,8 +36,8 @@ async def help(msg: Message):
 
 
 @bot.command(name='ai')
-async def go_gpt(msg: Message):
-    prompt = re.sub('(?:\s)<@[^, ]*|(?:^)<@[^, ]*', '', msg.content)
+async def go_gpt(msg: Message, content: str):
+    prompt = re.sub('(?:\s)<@[^, ]*|(?:^)<@[^, ]*', '', content)
     try:
         response = gptApi.ask(prompt)
     except Exception as e:

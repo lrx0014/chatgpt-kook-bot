@@ -7,6 +7,6 @@ services:
     restart: always
     container_name: kook-bot
     volumes:
-      - config.json:/app/config.json
+      - ./config.json:/app/config.json
     ports:
       - 5000:5000

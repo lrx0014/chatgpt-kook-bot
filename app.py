@@ -30,7 +30,7 @@ async def hello(msg: Message):
     await msg.reply("what's up bro!", use_quote=True)
 
 
-@bot.command(name='ai')
+@bot.command(name='help')
 async def help(msg: Message):
     await msg.reply("使用 /ai 命令与ChatGPT聊天，例如：/ai 写一首诗", use_quote=True)
 

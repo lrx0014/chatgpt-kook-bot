@@ -12,6 +12,8 @@ Kook（原名. 开黑啦），这是一个适用于kook的ChatGPT机器人框架
 * kook官方开发文档： https://developer.kookapp.cn/doc/intro
 * SDK文档：https://github.com/TWT233/khl.py/tree/main/example
 
+本bot以websocket模式运行，除此之外kook机器人还支持配置为webhook模式，但是如果只是让kook作为chatGPT的转发服务的话，websocket模式更加简单易用，不需要复杂的配置，强烈推荐
+
 ![show](./snapshots/pic01.png)
 
 ## 2 部署方式 / Deploy
@@ -24,7 +26,6 @@ Kook（原名. 开黑啦），这是一个适用于kook的ChatGPT机器人框架
 ```json 
 {
   "kook_token": "",  // kook的机器人token，详情见kook开发文档：https://developer.kookapp.cn/doc/intro
-  "port": 5000,
   "openai_api_key": "", // OpenAI的token，请自行准备账号
   "openai_engine": ""  // 可不填，目前默认为GPT-3.5-turbo
 }

@@ -1,6 +1,5 @@
 {
   "kook_token": "",
-  "port": 5000,
   "openai_api_key": "",
   "openai_engine": ""
 }

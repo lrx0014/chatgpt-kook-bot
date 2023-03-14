@@ -22,7 +22,7 @@ if config["openai_engine"] != "":
 gptApi = Chatbot(**ChatGPTConfig)
 
 # init Bot
-bot = Bot(token=config['kook_token'], port=config['port'])
+bot = Bot(token=config['kook_token'])
 
 
 @bot.command(name='hi')

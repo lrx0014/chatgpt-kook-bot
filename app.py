@@ -1,11 +1,8 @@
 import json
 import logging
 import re
-import time
-from threading import Thread
 
-from khl import Bot, Message, EventTypes, Event
-from khl.command import Rule
+from khl import Bot, Message
 from revChatGPT.V3 import Chatbot
 
 with open('config.json', 'r', encoding='utf-8') as f:
@@ -47,13 +44,6 @@ async def go_gpt(msg: Message, content: str):
     await msg.reply(response)
 
 
-def chatgpt_refresh():
-    while True:
-        time.sleep(60)
-
-
 if __name__ == "__main__":
-    thread = Thread(target=chatgpt_refresh)
-    thread.start()
     logging.basicConfig(level='INFO')
     bot.run()

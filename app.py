@@ -29,7 +29,13 @@ async def hello(msg: Message):
 
 @bot.command(name='help')
 async def help(msg: Message):
-    await msg.reply("使用 /ai 命令与ChatGPT聊天，例如：/ai 写一首诗", use_quote=True)
+    await msg.reply("使用 /ai 命令与ChatGPT聊天，例如：/ai 写一首诗\n使用 /reset 命令重置ai会话", use_quote=True)
+
+
+@bot.command(name='reset')
+async def reset(msg: Message):
+    gptApi.reset(convo_id=msg.author.username)
+    await msg.reply("用户"+msg.author.username+"，你的会话已重置", use_quote=True)
 
 
 @bot.command(name='ai')

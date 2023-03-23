@@ -42,7 +42,7 @@ async def reset(msg: Message):
 async def go_gpt(msg: Message, content: str):
     prompt = re.sub('(?:\s)<@[^, ]*|(?:^)<@[^, ]*', '', content)
     try:
-        response = gptApi.ask(prompt)
+        response = gptApi.ask(prompt=prompt, convo_id=msg.author.username)
     except Exception as e:
         print(e)
         response = "无法从OpenAI获得响应，API服务或者转发服务可能挂了..."
